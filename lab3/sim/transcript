@@ -1,0 +1,100 @@
+# Reading C:/modeltech64_10.6d/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.6d Feb 24 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do run.do
+# 1
+# Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 07:39:56 on Mar 10,2021
+# vlog -reportprogress 300 -sv -timescale 1ps/1ps -work work -f sources.txt 
+# -- Compiling package instr_register_pkg
+# -- Compiling module instr_register
+# -- Importing package instr_register_pkg
+# -- Compiling module instr_register_test
+# -- Compiling interface tb_ifc
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 07:39:56 on Mar 10,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top 
+# Start time: 07:39:56 on Mar 10,2021
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing C:/Users/VM/Desktop/TSC_Lab/lab3/sim/work.top
+# Refreshing C:/Users/VM/Desktop/TSC_Lab/lab3/sim/work.instr_register_pkg
+# Refreshing C:/Users/VM/Desktop/TSC_Lab/lab3/sim/work.tb_ifc
+# Refreshing C:/Users/VM/Desktop/TSC_Lab/lab3/sim/work.instr_register_test
+# Refreshing C:/Users/VM/Desktop/TSC_Lab/lab3/sim/work.instr_register
+# 
+# 
+# ***********************************************************
+# ***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# Reseting the instruction register...
+# 
+# Writing values to register stack...
+# Writing to register location 0: 
+#   opcode = 1 (PASSA)
+#   operand_a = -12
+#   operand_b = 7
+# 
+# Writing to register location 1: 
+#   opcode = 0 (ZERO)
+#   operand_a = -9
+#   operand_b = 1
+# 
+# Writing to register location 2: 
+#   opcode = 7 (MOD)
+#   operand_a = -15
+#   operand_b = 8
+# 
+# 
+# Reading back the same register locations written...
+# Read from register location 0: 
+#   opcode = 1 (PASSA)
+#   operand_a = -12
+#   operand_b = 7
+# 
+# Read from register location 1: 
+#   opcode = 0 (ZERO)
+#   operand_a = -9
+#   operand_b = 1
+# 
+# Read from register location 2: 
+#   opcode = 7 (MOD)
+#   operand_a = -15
+#   operand_b = 8
+# 
+# 
+# ***********************************************************
+# ***  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  ***
+# ***  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     ***
+# ***  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  ***
+# ***********************************************************
+# 
+# ** Note: $finish    : ../lab02_clocking_blocks/instr_register_test.sv(61)
+#    Time: 106 ns  Iteration: 1  Instance: /top/test
+# 1
+# Break in Module instr_register_test at ../lab02_clocking_blocks/instr_register_test.sv line 61
+# Simulation Breakpoint: 1
+# Break in Module instr_register_test at ../lab02_clocking_blocks/instr_register_test.sv line 61
+# MACRO ./run.do PAUSED at line 45
+add wave -position insertpoint sim:/top/*
+# Causality operation skipped due to absence of debug database file
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/VM/Desktop/TSC_Lab/lab3/sim/wave.do
+# End time: 07:46:34 on Mar 10,2021, Elapsed time: 0:06:38
+# Errors: 0, Warnings: 2
