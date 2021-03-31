@@ -11,12 +11,8 @@
 ../lab_dut/instr_register.sv
 
 //
-// Files that are not modified in this lab
-//
-tb_ifc.sv
-top.sv
-
-//
 // Files that require modification in this lab
 //
-instr_register_test.sv
+tb_ifc_solution.sv
+instr_register_test_solution.sv
+top_solution.sv

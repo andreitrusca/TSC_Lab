@@ -7,6 +7,7 @@
  * Tualatin, Oregon, USA.  All rights reserved.
  * www.sutherland-hdl.com
  **********************************************************************/
+
 interface tb_ifc (input logic clk);
   timeunit 1ns/1ns;
 
@@ -21,13 +22,18 @@ interface tb_ifc (input logic clk);
   address_t      write_pointer, read_pointer;
   instruction_t  instruction_word;
 
-  // ADD CODE TO DEFINE A CLOCKING BLOCK WITH INPUT AND OUTPUT SKEWS
-  default clocking cb @(posedge clk) ;
-    default input #1step output #1ns;
-    inout  operand_a, operand_b, opcode, write_pointer, read_pointer;
-    output load_en, reset_n;
-    input  instruction_word;
-  endclocking: cb
+  clocking cb @(posedge clk); // declarare
+    output load_en;
+    output reset_n;
+    output opcode;
+    output operand_a;
+    output operand_b;
+    output write_pointer;
+    output read_pointer;
+    input instruction_word;
+
+
+  endclocking
 
 endinterface: tb_ifc
 
