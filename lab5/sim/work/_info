@@ -1,0 +1,133 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/VM/AppData/Local/Packages/CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc/LocalState/rootfs/home/andreitrusca/TSC_Lab/lab5/sim
+vinstr_register
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 DXx4 work 18 instr_register_pkg 0 22 >Z4FUOG<=Y_?8`7P7SRHN0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?7jnUDkiR3iLk^7PaS=ja1
+I[1TzTS2=;]Pd7hWJJ69Ui0
+!s105 instr_register_sv_unit
+S1
+R0
+Z4 w1614784065
+8../../lab2/lab_dut/instr_register.sv
+F../../lab2/lab_dut/instr_register.sv
+L0 9
+Z5 OL;L;10.6d;65
+Z6 !s108 1617805355.000000
+Z7 !s107 ../classes/top.sv|../classes/tb_ifc.sv|../classes/instr_register_test.sv|../../lab2/lab_dut/instr_register.sv|../../lab2/lab_dut/instr_register_pkg.sv|
+Z8 !s90 -reportprogress|300|-sv|-timescale|1ps/1ps|-work|work|-f|sources.txt|
+!i113 0
+Z9 o-sv -timescale 1ps/1ps -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 !s92 -sv -timescale 1ps/1ps -work work +incdir+../../lab_dut +incdir+../../lab_dut +incdir+../classes +incdir+../classes +incdir+../classes -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0
+Xinstr_register_pkg
+R1
+V>Z4FUOG<=Y_?8`7P7SRHN0
+r1
+!s85 0
+31
+!i10b 1
+!s100 YT=bn^^oB9BJ`h54KSKSk1
+I>Z4FUOG<=Y_?8`7P7SRHN0
+S1
+R0
+R4
+8../../lab2/lab_dut/instr_register_pkg.sv
+F../../lab2/lab_dut/instr_register_pkg.sv
+L0 5
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R11
+vinstr_register_test
+R1
+R2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 07KTJ^8eemULMh8;P>alH1
+I9JiW2c[`@RAQRfEHej3Xg2
+!s105 instr_register_test_sv_unit
+S1
+R0
+w1617804999
+8../classes/instr_register_test.sv
+F../classes/instr_register_test.sv
+L0 13
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R11
+Ytb_ifc
+R1
+R2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 4hKVNOFliNNMHJVUCdG4a3
+I6<3k]1]o4U=zLa>l=A>m40
+!s105 tb_ifc_sv_unit
+S1
+R0
+w1617199322
+8../classes/tb_ifc.sv
+F../classes/tb_ifc.sv
+L0 11
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R11
+vtop
+R1
+R2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 1W^OKCO0[:<9fC<CdGhN03
+I8;7jm^oID[7<Oz=^?eiHX3
+!s105 top_sv_unit
+S1
+R0
+w1617805173
+8../classes/top.sv
+F../classes/top.sv
+L0 10
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R11

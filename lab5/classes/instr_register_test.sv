@@ -27,10 +27,10 @@ module instr_register_test (tb_ifc tbifc);  // interface port
 
     function void randomize_transaction();
       static int temp = 0;
-      operand_a     <= $random(seed)%16;                 // between -15 and 15
-      operand_b     <= $unsigned($random)%16;            // between 0 and 15
-      opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-      write_pointer <= temp++;
+      operand_a     = $random(seed)%16;                 // between -15 and 15
+      operand_b     = $unsigned($random)%16;            // between 0 and 15
+      opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+      write_pointer = temp++;
     endfunction: randomize_transaction
 
     function void print_transaction;
@@ -53,23 +53,24 @@ module instr_register_test (tb_ifc tbifc);  // interface port
 
     task generate_transaction;
       $display("\nReseting the instruction register...");
-      trans.write_pointer <= 5'h00;      // initialize write pointer
-      trans.read_pointer  <= 5'h1F;      // initialize read pointer
+      vifc.cb.write_pointer <= 4'h00;      // initialize write pointer
+      vifc.cb.read_pointer  <= 5'h1F;      // initialize read pointer
       vifc.cb.load_en       <= 1'b0;       // initialize load control line
       vifc.cb.reset_n       <= 1'b0;       // assert reset_n (active low)
       repeat (2) @vifc.cb ;  // hold in reset for 2 clock cycles
       vifc.cb.reset_n       <= 1'b1;       // assert reset_n (active low)
 
-      @vifc.cb vifc.cb.load_en <= 1'b1;  // enable writing to register
+      @vifc.cb vifc.load_en <= 1'b1;  // enable writing to register
       repeat (3) begin
         @vifc.cb trans.randomize_transaction();
+        vifc.cb.operand_a <= trans.operand_a;
+        vifc.cb.operand_b <= trans.operand_b;
+        vifc.cb.opcode <= trans.opcode;
+        vifc.cb.write_pointer <= trans.write_pointer;
         @vifc.cb trans.print_transaction();
-        vifc.operand_a <= trans.operand_a;
-        vifc.operand_b <= trans.operand_b;
-        vifc.opcode <= trans.opcode;
-        vifc.write_pointer <= trans.write_pointer;
+        
       end
-      @vifc.cb vifc.cb.load_en <= 1'b0;  // turn-off writing to register
+      @vifc.cb vifc.load_en <= 1'b0;  // turn-off writing to register
 
     endtask
 
@@ -83,10 +84,10 @@ module instr_register_test (tb_ifc tbifc);  // interface port
     endfunction
 
     function void print_results;
-      $display("Read from register location %0d: ", tbifc.read_pointer);
-      $display("  opcode = %0d (%s)", tbifc.instruction_word.opc, tbifc.instruction_word.opc.name);
-      $display("  operand_a = %0d",   tbifc.instruction_word.op_a);
-      $display("  operand_b = %0d\n", tbifc.instruction_word.op_b);
+      $display("Read from register location %0d: ", vifc.read_pointer);
+      $display("  opcode = %0d (%s)", vifc.instruction_word.opc, vifc.instruction_word.opc.name);
+      $display("  operand_a = %0d",   vifc.instruction_word.op_a);
+      $display("  operand_b = %0d\n", vifc.instruction_word.op_b);
     endfunction: print_results
 
     task transaction_monitor();
