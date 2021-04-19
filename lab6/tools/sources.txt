@@ -1,0 +1,6 @@
+../lab_dut/instr_register_pkg.sv   	                +incdir+../../lab_dut
+../lab_dut/instr_register.sv   	                +incdir+../../lab_dut
+
+../classes/instr_register_test.sv                    +incdir+../classes
+../classes/tb_ifc.sv                    +incdir+../classes
+../classes/top.sv                    +incdir+../classes
